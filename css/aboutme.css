@@ -1,0 +1,183 @@
+
+
+/* aboutme */
+.aboutme {
+    .fv {
+      .inner {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+  
+        h1 {
+          font-size: 5rem;
+          font-weight: 700;
+          margin-bottom: 24px;
+          font-family: "Marcellus SC", serif;
+        }
+
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .aboutme_contents {
+      padding-top: 64px;
+      padding-bottom: 100px;
+      background-color: #f5f5f5;
+  
+      h2.title {
+        font-size: 5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 70px;
+        font-family: "Marcellus SC", serif;
+      }
+
+
+      p.subtitle {
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 100px;
+        @media screen and (max-width: 767px) {
+          margin-bottom: 20px;
+        }
+      }
+  
+      .aboutme_content_items {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        > li {
+          background-color: #fff;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          padding: 80px;
+  
+          & + li {
+            gap: 60px;
+          }
+        }
+  
+        .profile {
+          display: flex;
+          justify-content: space-between;
+          border-radius: 10px;
+          @media screen and (max-width: 767px) {
+            padding: 40px;
+            flex-direction: column;
+            margin-top: 50px;
+          }
+  
+          .profile_right {
+            width: 50%;
+            @media screen and (max-width: 767px) {
+              flex-direction: column;
+              margin-top: 50px;
+            }
+            .birth {
+              font-size: 1.6rem;
+              font-weight: 700;
+            }
+  
+            .name {
+              margin-top: 10px;
+              font-size: 4rem;
+              font-weight: 700;
+            }
+  
+            .duties {
+              margin-top: 10px;
+              font-size: 2rem;
+              font-weight: 700;
+            }
+          }
+  
+          .profile_left {
+            width: 50%;
+            @media screen and (max-width: 767px) {
+              width: 100%;
+            }
+            .history {
+              font-size: 1.6rem;
+              font-weight: 400;
+              line-height: 150%;
+              @media screen and (max-width: 767px) {
+                margin-top: 50px;
+              }
+            }
+          }
+        }
+  
+        .skill {
+          border-radius: 10px;
+          @media screen and (max-width: 767px) {
+            padding: 40px;
+          }
+          h3 {
+            font-size: 4rem;
+            font-weight: 700;
+          }
+          ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            margin-top: 35px;
+            @media screen and (max-width: 767px) {
+              grid-template-columns: repeat(1, 1fr);
+            }
+  
+            li {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 35px;
+              @media screen and (max-width: 767px) {
+                margin-top: 50px;
+              }
+  
+              p {
+                font-size: 2rem;
+              }
+  
+              img {
+                width: auto;
+                height: 60px;
+                object-fit: contain;
+                @media screen and (max-width: 767px) {
+                  width: 30%;
+                  height: auto;
+                }
+              }
+              &.Studio{
+                @media screen and (max-width: 767px) {
+                  img{
+                    width: 80%;
+                    height: auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      .btn {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          display: inline-block;
+          background-color: #000;
+          color: #fff;
+          font-size: 2rem;
+          padding: 15px 50px;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  

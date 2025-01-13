@@ -1,0 +1,199 @@
+/* contact */
+#contact {
+    .fv {
+      .inner {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+  
+        h1 {
+          font-size: 5rem;
+          font-weight: 700;
+          margin-bottom: 24px;
+          font-family: "Marcellus SC", serif;
+        }
+  
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+  
+    #contact_contents {
+      padding-top: 64px;
+      padding-bottom: 100px;
+      background-color: #f5f5f5;
+  
+      h2.title {
+        font-size: 5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: "Marcellus SC", serif;
+      }
+  
+      p.subtitle {
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 100px;
+      }
+    }
+  
+    form {
+      background-color: #fff;
+      padding: 80px 10% 100px;
+      border-radius: 10px;
+  
+      p {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 100px;
+      }
+  
+      .contact_wrapper_contents {
+        display: flex;
+        flex-direction: column;
+  
+        & + div {
+          margin-top: 35px;
+        }
+  
+        label {
+          font-size: 1.6rem;
+          font-weight: 700;
+          span {
+            color: #099df0;
+          }
+        }
+  
+        input {
+          margin-top: 20px;
+          background-color: #f3f3f3;
+          height: 40px;
+          border-radius: 10px;
+          width: 100%;
+          padding: 0 14px;
+          box-sizing: border-box;
+        }
+  
+        textarea {
+          margin-top: 20px;
+          background-color: #f3f3f3;
+          border-radius: 10px;
+          width: 100%;
+          padding: 0 14px;
+          box-sizing: border-box;
+        }
+      }
+  
+      .contact_wrapper_privacy {
+        display: flex;
+        justify-content: center;
+        input {
+          margin-right: 10px;
+        }
+        p {
+          display: inline-block;
+          font-weight: 400;
+          font-size: 1.6rem;
+          margin-bottom: initial;
+        }
+        label {
+          @media screen and (max-width: 767px) {
+            display: flex;
+            align-items: flex-start;
+          }
+        }
+      }
+  
+      .contact_wrapper_btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 75px;
+        flex-direction: column;
+        align-items: center;
+        input {
+          display: inline-block;
+          background-color: #000;
+          color: #fff;
+          font-size: 2rem;
+          padding: 10px 50px;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  
+  /* 送信完了ページ */
+  #contactCompletion{
+    .fv {
+      .inner {
+          height: 50vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: #fff;
+      }
+      h1{
+        font-size: 5rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      p{
+        font-size: 2rem;
+      }
+    }
+  }
+
+  #contactCompletion_contents{
+    padding-top: 64px;
+    padding-bottom: 100px;
+    background-color: #f5f5f5;
+    h2.title {
+      font-size: 5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    p.subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 100px;
+    }
+    .content{
+      background-color: #fff;
+      padding: 80px;
+      border-radius: 10px;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    .btn {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        font-size: 2rem;
+        padding: 15px 50px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  /* コンタクトフォーム7 */
+  div.wpcf7 .wpcf7-spinner {
+    display: block;
+  }
+
+
+
+
