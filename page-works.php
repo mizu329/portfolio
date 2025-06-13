@@ -28,12 +28,22 @@
 
             <ul class="workslist animationElement">
 
-                <?php
-                $infoPosts = get_posts('numberposts=4&category=2');
-                foreach($infoPosts as $post): 
-                ?>
-                
 
+            <?php
+            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                $args = array(
+                    'post_type' => 'post', // カスタム投稿タイプ「news」を指定
+                    'posts_per_page' => 6, // 表示する記事数
+                    'orderby' => 'date',   // 日付順で取得
+                    'order' => 'DESC',     // 新しい順に並べる
+                    'paged' => $paged // ページ番号を指定
+                );
+                $my_query = new WP_Query( $args ); // カスタム投稿を取得
+                ?>
+
+            <?php if ( $my_query->have_posts() ) : ?>
+                <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+                            
                 <li class="worksitems">
                     <div class="box_left">
                     <?php
@@ -50,11 +60,30 @@
                     <div class="box_right">
                     <p class="title"><?php the_title(); ?></p>
                     <div class="content"><?php the_content(); ?></div>
+                    <?php if (!post_password_required()) : ?>
                     <a class="btn" href="<?php the_permalink(); ?>">詳細を見る</a>
+                    <?php endif; ?>
                     </div>
                 </li>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </ul>
+
+            <div class="pagenation">
+                <?php
+                echo paginate_links( array(
+                'total' => $my_query->max_num_pages, // 全ページ数を指定
+                'current' => max( 1, $paged ), // 現在のページ番号を指定
+                'prev_text' => '« Prev', // 「前へ」のテキスト
+                'next_text' => 'Next »', // 「次へ」のテキスト
+                ) );
+                ?>
+            </div>
+
+            <?php wp_reset_postdata(); ?>
+            <?php else : ?>
+            <p>投稿が見つかりません。</p>
+            <?php endif; ?>
+        
             </div>
 
         </section>

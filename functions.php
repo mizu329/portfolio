@@ -1,4 +1,5 @@
 <?php
+
 /* ---------- カスタム投稿タイプを追加 ---------- */
 add_action( 'init', 'create_post_type' );
 
@@ -100,3 +101,34 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
 }
+
+// css
+function mytheme_enqueue_styles() {
+  $theme_dir = get_stylesheet_directory();          // 子テーマならこっち
+  $theme_uri = get_stylesheet_directory_uri();
+
+  $css_files = [
+      'header'         => '/css/header.css',
+      'footer'         => '/css/footer.css',
+      'reset'          => '/css/reset.css',
+      'common'         => '/css/common.css',
+      'top'            => '/css/top.css',
+      'aboutme'        => '/css/aboutme.css',
+      'work'           => '/css/work.css',
+      'news'           => '/css/news.css',
+      'contact'        => '/css/contact.css',
+      'privacypolicy'  => '/css/privacypolicy.css',
+  ];
+
+  foreach( $css_files as $handle => $relative_path ) {
+      $abs_path = $theme_dir . $relative_path;
+      $ver = file_exists($abs_path) ? filemtime($abs_path) : false;
+      wp_enqueue_style(
+          "mytheme-{$handle}",
+          $theme_uri . $relative_path,
+          [],        // 依存関係があれば配列で指定可能
+          $ver
+      );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_styles' );

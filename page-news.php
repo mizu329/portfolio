@@ -67,19 +67,23 @@
 
             </ul>
 
-            <?php
-    echo paginate_links( array(
+        <div class="pagenation">
+        <?php
+        echo paginate_links( array(
         'total' => $my_query->max_num_pages, // 全ページ数を指定
         'current' => max( 1, $paged ), // 現在のページ番号を指定
-        'prev_text' => '« 前へ', // 「前へ」のテキスト
-        'next_text' => '次へ »', // 「次へ」のテキスト
-    ) );
-    ?>
+        'prev_text' => '« Prev', // 「前へ」のテキスト
+        'next_text' => 'Next »', // 「次へ」のテキスト
+        ) );
+        ?>
+        </div>
 
-<?php wp_reset_postdata(); ?>
-<?php else : ?>
-    <p>投稿が見つかりません。</p>
-<?php endif; ?>
+
+
+        <?php wp_reset_postdata(); ?>
+        <?php else : ?>
+            <p>投稿が見つかりません。</p>
+        <?php endif; ?>
 
             </div>
 

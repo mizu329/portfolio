@@ -1,5 +1,5 @@
 <footer>
-    <p>@2024 Mizuki Matsuya. All right reserved.</p>
+    <p>@2024-2025 Visionary Mate. All right reserved.</p>
 </footer>
 
 <?php wp_footer(); ?>

@@ -1,21 +1,20 @@
-
-
     <?php get_header(); ?>
+
 
     <main class="top">
         <section class="fv">
             <div class="inner">
                 <h1 class="animationElement">Visionary Mate</h1>
-                <p class="animationElement">あなたのサービスを魅力的にする<br>
-                    お手伝いをさせてください</p>
+                <p class="animationElement">伝えたい価値を、伝わるかたちへ。<br>
+                想いを届けるデザイン・実装・CMS運用で、あなたのブランドを支えます。</p>
             </div>
         </section>
         <section class="aboutme animationElement">
             <div class="inner">
                 <h1>About</h1>
                 <h2>Visionary Mate</h2>
-                <p>Visionary Mateは、WEBやLP、バナー制作などのクリエイティブ制作、WEB開発を通じて、ビジネスの成長をサポートします。
-                新しいWEBサイトの構築やリニューアルをお考えの方は、ぜひお気軽にご相談ください。あなたのビジョンを実現するお手伝いをいたします。
+                <p>Visionary Mateでは、WEBやLP、バナー制作などのクリエイティブ制作やCMS構築のお手伝いをしています。<br>
+                新しいWEBサイトやLPの構築やリニューアルをお考えの方は、ぜひお気軽にお声がけください。
                 </p>
                 <div class="btn">
                     <a href="<?php echo home_url(); ?>/aboutme/">About me</a>
@@ -49,8 +48,10 @@
                         </div>
                         <div class="box_right">
                             <h2 class=""><?php the_title() ?></h2>
-                            <p class="content"><?php the_content(); ?></p>
+                            <div class="content"><?php the_content(); ?></div>
+                            <?php if (!post_password_required()) : ?>
                             <a class="btn" href="<?php the_permalink(); ?>">詳細を見る</a>
+                            <?php endif; ?>
                         </div>
                     </li>
 
@@ -95,7 +96,7 @@
                     <p class="time"><?php the_time('Y/m/d'); ?></p> <!-- 投稿日時を表示 -->
                 </li>
                 </a>
-                
+
                 <?php endforeach; wp_reset_postdata(); // ループ後にデータをリセット ?>
                 </ul>
 

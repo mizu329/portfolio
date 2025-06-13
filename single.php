@@ -60,9 +60,15 @@
                     <?php if (!empty($url_value)): ?>
                         <p class="url">
                             <span>URL:</span><br>
-                            <a href="<?php echo $url_value; ?>"><?php echo $url_value; ?></a>
+                            <a target="_blank" rel="noopener noreferrer" href="<?php echo $url_value; ?>"><?php echo $url_value; ?></a>
                         </p>
                     <?php endif; ?>
+
+                    <?php 
+$fullpage_image = get_field('fullpage'); 
+if (!empty($fullpage_image)): ?>
+    <img src="<?php echo esc_url($fullpage_image['url']); ?>" alt="<?php echo esc_attr($fullpage_image['alt']); ?>">
+<?php endif; ?>
 
                 <div class="btn">
                 <a href="<?php echo home_url(); ?>/work">Woks一覧へ</a>

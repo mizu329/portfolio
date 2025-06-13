@@ -19,6 +19,8 @@
             <div class="content">
                 <?php echo wpautop(get_the_content()); ?>
 
+                <?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
+
                 <div class="btn">
                     <a href="<?php echo home_url(); ?>/news">News一覧へ</a>
                 </div>

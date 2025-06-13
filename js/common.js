@@ -1,3 +1,31 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const currentUrl = window.location.href;
+
+  // 「/contact」を含むURLだけ
+  if (currentUrl.includes('/contact')) {
+    const popup = document.getElementById('custom-popup');
+    const closeBtn = document.getElementById('close-popup');
+
+    popup.style.display = 'block';
+
+    // ✅ 表示イベントをGAに送信
+    gtag('event', 'popup_view', {
+      event_category: 'Popup',
+      event_label: currentUrl
+    });
+
+    closeBtn.addEventListener('click', function() {
+      popup.style.display = 'none';
+
+      // ✅ 閉じるボタンクリックをGAに送信
+      gtag('event', 'popup_close_click', {
+        event_category: 'Popup',
+        event_label: currentUrl
+      });
+    });
+  }
+});
+
 // メニュー展開時に背景を固定
 const backgroundFix = (bool) => {
     const scrollingElement = () => {

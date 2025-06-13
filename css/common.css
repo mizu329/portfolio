@@ -1,52 +1,107 @@
 .inner {
-    display: block;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+  display: block;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+body {
+  background-image: url(../img/flower.webp);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 767px) {
   body {
     background-image: url(../img/flower.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: calc(100% + 300px) !important;
+  }
+}
+
+/* ページネーション */
+.pagenation{
+  margin-top: 70px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  font-family: "Marcellus SC", serif;
+}
+
+.pagenation .nav-links{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pagenation a{
+  color: #000;
+  font-family: "Marcellus SC", serif;
+  }
+
+.pagenation .page-numbers.current{
+    background-color: #099DF0;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* パスワード入力 */
+  .content{
+    margin-top: 24px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+  .content input{
+    padding: 1px 10px;	
+  }
+  .content input[name="Submit"] {	
+    background: black;	
+    color: white;	
+    padding: 1px 10px;	
+    border-radius: 3px;
   }
 
   @media screen and (max-width: 767px) {
-    body {
-      background-image: url(../img/flower.webp);
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: calc(100% + 300px) !important;
+    .content input[name="Submit"] {	
+      margin-top: 10px;
     }
   }
-  
-  /* SP・PC表示切替 */
+
+/* SP・PC表示切替 */
+.pc{
+  display: block;
+}
+.sp{
+  display: none;
+}
+@media screen and (max-width: 767px) {
   .pc{
-    display: block;
+    display: none !important;
   }
   .sp{
-    display: none;
+    display: block;
   }
-  @media screen and (max-width: 767px) {
-    .pc{
-      display: none !important;
-    }
-    .sp{
-      display: block;
-    }
-  }
+}
 
-  /* アニメーション */
-  .slideinTop {
-    animation: slideinTop 3s 1;
+/* アニメーション */
+.slideinTop {
+  animation: slideinTop 3s 1;
+}
+@keyframes slideinTop {
+  0% {
+    transform: translateY(-50px);
   }
-  @keyframes slideinTop {
-    0% {
-      transform: translateY(-50px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
   }
+}
