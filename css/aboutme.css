@@ -36,7 +36,6 @@
         font-family: "Marcellus SC", serif;
       }
 
-
       p.subtitle {
         font-size: 2.4rem;
         font-weight: 700;
@@ -116,6 +115,24 @@
           @media screen and (max-width: 767px) {
             padding: 40px;
           }
+
+          .Github {
+            position: relative;
+          }
+
+          .Github > a {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+          }
+
+          .bound {
+            position: absolute;
+            font-size: 1.2rem;
+            bottom: -25px;
+            animation: bound-anim 1.5s infinite;
+          }
+          
           h3 {
             font-size: 4rem;
             font-weight: 700;

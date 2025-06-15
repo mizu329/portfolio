@@ -1,6 +1,23 @@
 
     <?php get_header(); ?>
 
+    <style>
+        @keyframes bound-anim {
+            0%, 100% {
+              transform: translateY(0) scale(1);
+            }
+            30% {
+              transform: translateY(-10px);
+            }
+            50% {
+              transform: translateY(0) scale(1);
+            }
+            90% {
+              transform: translateY(0) scale(1);
+            }
+          }
+    </style>
+
     <main class="aboutme">
         <section class="fv">
             <div class="inner">
@@ -49,7 +66,10 @@
                             </li>
                             <li class="Github">
                                 <p>Github</p>
+                                <a href="https://github.com/mizu329" target="_blank" rel="noopener noreferrer">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/Github.webp" alt="">
+                                </a>
+                                <p class="bound">▲click here</p>
                             </li>
                             <li class="Wordpress">
                                 <p>Wordpress</p>
