@@ -226,6 +226,10 @@
     padding: 90px 0 100px;
     background-color: #fff;
     border-radius: 10px;
+    p {
+      font-size: 2rem;
+      word-wrap: break-word;
+    }
     .noimage {
       display: flex;
       justify-content: center;
